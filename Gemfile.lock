@@ -76,6 +76,11 @@ GEM
     eventmachine (0.12.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (3.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (3.5.0)
+      factory_girl (~> 3.5.0)
+      railties (>= 3.0.0)
     fastercsv (1.5.5)
     formtastic (2.1.1)
       actionpack (~> 3.0)
@@ -180,6 +185,7 @@ DEPENDENCIES
   activeadmin!
   coffee-rails
   ecm_courses!
+  factory_girl_rails (~> 3.0)
   jquery-rails
   meta_search (>= 1.1.0.pre)
   rspec-rails (~> 2.0)

@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
   
   # # Tests
   s.add_development_dependency "rspec-rails", "~> 2.0"
+  s.add_development_dependency "factory_girl_rails", "~> 3.0"
   # s.add_development_dependency "capybara"
   # s.add_development_dependency "guard-rspec"
   # s.add_development_dependency "guard-spork"
