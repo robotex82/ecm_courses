@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "ecm_courses/version"
+require "ecm/courses/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "ecm_courses"
-  s.version     = EcmCourses::VERSION
+  s.version     = Ecm::Courses::VERSION
   s.authors     = ["Roberto Vasquez Angel"]
   s.email       = ["roberto@vasquez-angel.de"]
   s.homepage    = "https://github.com/robotex82/ecm_courses"
@@ -17,5 +17,12 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.2.6"
 
+  # Development
   s.add_development_dependency "sqlite3"
+  
+  # # Tests
+  # s.add_development_dependency "rspec-rails"
+  # s.add_development_dependency "capybara"
+  # s.add_development_dependency "guard-rspec"
+  # s.add_development_dependency "guard-spork"
 end
