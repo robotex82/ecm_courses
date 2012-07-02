@@ -20,6 +20,9 @@ Gem::Specification.new do |s|
   # Development
   s.add_development_dependency "sqlite3"
   
+  # Documentation
+  s.add_development_dependency "yard"
+  
   # # Tests
   # s.add_development_dependency "rspec-rails"
   # s.add_development_dependency "capybara"

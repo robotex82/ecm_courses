@@ -1,3 +1,43 @@
 = EcmCourses
 
+= Purpose
+
+Create and administrate courses in active admin and display them on
+in your ruby on rails applictation.
+
+= Features
+
+  * Drop in module for active admin.
+
+= Installation
+
+Add it to your gemfile:
+
+  gem 'ecm_courses'
+  
+Install your bundle:
+
+  > bundle install
+  
+Update your layout to include the needed css and javascript:
+
+  <!-- ecm pictures -->
+  <%= javascript_include_tag "ecm_courses" %>
+  <%= stylesheet_link_tag "ecm_courses" %>
+  
+= Usage
+
+You can administrate your courses in active admin.
+
+Once you have a course, you can display it like this:
+
+  <%= render_course 'Advanced Lightsaber Training' %>
+  
+= Todo
+
+  * Tests, tests, tests.
+  * Better docs.
+
+= License
+
 This project rocks and uses MIT-LICENSE.
