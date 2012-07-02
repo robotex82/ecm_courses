@@ -15,3 +15,7 @@ gem "jquery-rails"
 
 # To use debugger
 # gem 'debugger'
+
+# Edge active admin
+gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
+gem 'coffee-rails'

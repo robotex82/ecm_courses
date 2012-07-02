@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "yard"
   
   # Dummy App
-  s.add_development_dependency "activeadmin"
+  # s.add_development_dependency "activeadmin" # Using edge active admin (see Gemfile)
   s.add_development_dependency "sass-rails"
   s.add_development_dependency "meta_search", ">= 1.1.0.pre"
   
