@@ -7,11 +7,11 @@ require "ecm_courses/version"
 Gem::Specification.new do |s|
   s.name        = "ecm_courses"
   s.version     = EcmCourses::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of EcmCourses."
-  s.description = "TODO: Description of EcmCourses."
+  s.authors     = ["Roberto Vasquez Angel"]
+  s.email       = ["roberto@vasquez-angel.de"]
+  s.homepage    = "https://github.com/robotex82/ecm_courses"
+  s.summary     = "Course management module."
+  s.description = "Couse management module for active admin."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
