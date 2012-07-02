@@ -1,2 +1,2 @@
 require 'ecm/courses/engine'
-require 'ecm/courses/version
+require 'ecm/courses/version'
