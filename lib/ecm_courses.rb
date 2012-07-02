@@ -1,0 +1,2 @@
+module EcmCourses
+end
