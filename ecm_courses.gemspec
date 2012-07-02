@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "meta_search", ">= 1.1.0.pre"
   
   # # Tests
-  # s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "rspec-rails", "~> 2.0"
   # s.add_development_dependency "capybara"
   # s.add_development_dependency "guard-rspec"
   # s.add_development_dependency "guard-spork"
