@@ -17,8 +17,11 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.2.6"
 
-  # Development
+  # Development Database
   s.add_development_dependency "sqlite3"
+  
+  # Development Server
+  s.add_development_dependency "thin"
   
   # Documentation
   s.add_development_dependency "yard"
