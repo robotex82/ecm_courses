@@ -42,7 +42,6 @@ describe "AdminPages" do
           #not just attributes_for, because then associated ids are not set up
           instance = FactoryGirl.build(path)
           attributes = instance.attributes.reject() { |k, v| !instance.class.accessible_attributes.include?(k) }
-          #attributes = instance.attributes.reject() { |k, v| !Ecm::Courses::CourseCategory.accessible_attributes.include?(k) }
           #admin user should have password, generated with #attributes_for
           attributes.merge!(FactoryGirl.attributes_for(:admin_user)) if path == 'admin_user'
           post send("admin_#{path.pluralize}_path"),
