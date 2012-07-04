@@ -12,7 +12,11 @@ describe "AdminPages" do
     end
 
     describe "check all pages:" do
+      # check app path
       all_admin_pages = Dir['app/admin/*.rb'].map { |entry| entry[/[^\/]+\.rb/][0..-4] }
+      # check engine path
+      all_admin_pages.concat(Dir['../../app/admin/*.rb'].map { |entry| entry[/[^\/]+\.rb/][0..-4] })
+      
       if all_admin_pages.delete('dashboards')
         it 'dashboard' do
           get send("admin_dashboard_path")
@@ -36,7 +40,9 @@ describe "AdminPages" do
 
         it "#{path} -> CREATE" do
           #not just attributes_for, because then associated ids are not set up
-          attributes = FactoryGirl.build(path).attributes
+          instance = FactoryGirl.build(path)
+          attributes = instance.attributes.reject() { |k, v| !instance.class.accessible_attributes.include?(k) }
+          #attributes = instance.attributes.reject() { |k, v| !Ecm::Courses::CourseCategory.accessible_attributes.include?(k) }
           #admin user should have password, generated with #attributes_for
           attributes.merge!(FactoryGirl.attributes_for(:admin_user)) if path == 'admin_user'
           post send("admin_#{path.pluralize}_path"),
