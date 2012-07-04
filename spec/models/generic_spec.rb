@@ -6,15 +6,26 @@ describe "ActiveRecord::Base models" do
         ActiveRecord::Base.descendants.should include(model)
       end
       
-      it " => new" do
-        new_instance = model.new
-        new_instance.should be_a model
+      it "should be instanciable" do
+        instance = model.new
+        instance.should be_a model
       end
       
       it "should be valid with correct attribute values" do
-        valid_instance = Factory(model.to_s.tableize.singularize.underscore.gsub( '/', '_'))
-        valid_instance.should be_valid
+        instance = Factory(model.to_s.tableize.singularize.underscore.gsub( '/', '_'))
+        instance.should be_valid
       end
+      
+      it "should not be valid with empty attributes" do
+        instance = model.new
+        instance.should_not be_valid
+      end      
+      
+      it "should save with valid attributes" do
+        instance = Factory(model.to_s.tableize.singularize.underscore.gsub( '/', '_'))
+        instance.save.should be_true
+        instance.should be_persisted
+      end  
     end
   end
 end
