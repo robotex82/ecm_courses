@@ -16,8 +16,9 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 3.2.6"
-  s.add_dependency "awesome_nested_set"
-  s.add_dependency "friendly_id"
+  s.add_dependency "acts_as_list", "~> 0.1.6"
+  s.add_dependency "awesome_nested_set", "~> 2.1.3"
+  s.add_dependency "friendly_id", "~> 4.0.7"
 
   # Development Database
   s.add_development_dependency "sqlite3"
@@ -36,6 +37,7 @@ Gem::Specification.new do |s|
   # # Tests
   s.add_development_dependency "rspec-rails", "~> 2.0"
   s.add_development_dependency "factory_girl_rails", "~> 3.0"
+  s.add_development_dependency "shoulda-matchers"
   # s.add_development_dependency "capybara"
   # s.add_development_dependency "guard-rspec"
   # s.add_development_dependency "guard-spork"

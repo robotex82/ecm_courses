@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703194958) do
+ActiveRecord::Schema.define(:version => 20120704173009) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -60,5 +60,19 @@ ActiveRecord::Schema.define(:version => 20120703194958) do
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end
+
+  create_table "ecm_courses_courses", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "locale"
+    t.integer  "ecm_courses_course_dates_count"
+    t.integer  "ecm_courses_course_category_id"
+    t.integer  "position",                       :default => 0, :null => false
+    t.string   "slug"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+  end
+
+  add_index "ecm_courses_courses", ["ecm_courses_course_category_id"], :name => "index_ecm_courses_courses_on_ecm_courses_course_category_id"
 
 end

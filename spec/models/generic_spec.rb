@@ -12,7 +12,7 @@ describe "ActiveRecord::Base models" do
       end
       
       it "should be valid with correct attribute values" do
-        instance = Factory(model.to_s.tableize.singularize.underscore.gsub( '/', '_'))
+        instance = FactoryGirl.create(model.to_s.tableize.singularize.underscore.gsub( '/', '_'))
         instance.should be_valid
       end
       
@@ -22,7 +22,7 @@ describe "ActiveRecord::Base models" do
       end      
       
       it "should save with valid attributes" do
-        instance = Factory(model.to_s.tableize.singularize.underscore.gsub( '/', '_'))
+        instance = FactoryGirl.create(model.to_s.tableize.singularize.underscore.gsub( '/', '_'))
         instance.save.should be_true
         instance.should be_persisted
       end  

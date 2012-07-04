@@ -1,6 +1,7 @@
 require 'rubygems'
 
 require 'absence_validator'
+require 'acts_as_list'
 require 'awesome_nested_set'
 require 'friendly_id'
 
