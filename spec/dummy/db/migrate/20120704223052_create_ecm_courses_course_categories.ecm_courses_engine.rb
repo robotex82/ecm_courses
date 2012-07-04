@@ -6,7 +6,7 @@ class CreateEcmCoursesCourseCategories < ActiveRecord::Migration
       t.text :description
       t.string :locale
       t.integer :position
-      t.integer :ecm_courses_courses_count
+      t.integer :ecm_courses_courses_count, :default => 0, :null => false
 
       # awesome nested set
       t.integer :parent_id

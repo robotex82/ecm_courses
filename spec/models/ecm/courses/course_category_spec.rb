@@ -1,7 +1,7 @@
 module Ecm
   module Courses
     describe CourseCategory do
-      subject { FactoryGirl.create(:ecm_courses_course_category) }
+      subject { FactoryGirl.build(:ecm_courses_course_category) }
       
       it { should have_many(:ecm_courses_courses) }
       

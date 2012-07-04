@@ -1,8 +1,8 @@
 if defined?(ActiveAdmin)
-  ActiveAdmin.register Ecm::Courses::CourseCategory do
+  ActiveAdmin.register Ecm::Courses::Course do
     form do |f|
       f.inputs do
-        f.input :parent
+        f.input :ecm_courses_course_category
         f.input :locale
         f.input :name
         f.input :description

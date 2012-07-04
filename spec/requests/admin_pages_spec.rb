@@ -66,7 +66,12 @@ describe "AdminPages" do
           updated_object = assigns(path)
           response.should redirect_to(:action => :show, :id => updated_object)
           attributes.each do |k,v|
-            updated_object[k].should == v
+            # Hack to fix bug in ActiveSupport::TimeWithZone.==
+            if updated_object[k].class == ActiveSupport::TimeWithZone
+              updated_object[k].to_s.should == v.to_s
+            else
+              updated_object[k].should == v
+            end  
           end
         end
 

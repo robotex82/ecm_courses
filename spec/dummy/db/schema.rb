@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120704173009) do
+ActiveRecord::Schema.define(:version => 20120704223054) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -51,23 +51,32 @@ ActiveRecord::Schema.define(:version => 20120704173009) do
     t.text     "description"
     t.string   "locale"
     t.integer  "position"
-    t.integer  "ecm_courses_courses_count"
+    t.integer  "ecm_courses_courses_count", :default => 0, :null => false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
     t.integer  "depth"
     t.string   "slug"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+  end
+
+  create_table "ecm_courses_course_dates", :force => true do |t|
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.text     "description"
+    t.integer  "ecm_courses_course_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "ecm_courses_courses", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "locale"
-    t.integer  "ecm_courses_course_dates_count"
+    t.integer  "ecm_courses_course_dates_count", :default => 0, :null => false
     t.integer  "ecm_courses_course_category_id"
-    t.integer  "position",                       :default => 0, :null => false
+    t.integer  "position"
     t.string   "slug"
     t.datetime "created_at",                                    :null => false
     t.datetime "updated_at",                                    :null => false

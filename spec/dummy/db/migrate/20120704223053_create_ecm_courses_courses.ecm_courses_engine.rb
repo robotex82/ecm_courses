@@ -7,11 +7,11 @@ class CreateEcmCoursesCourses < ActiveRecord::Migration
       t.string :locale
       
       # references
-      t.integer :ecm_courses_course_dates_count
+      t.integer :ecm_courses_course_dates_count, :default => 0, :null => false
       t.references :ecm_courses_course_category
       
       # acts as list
-      t.integer :position, :default => 0, :null => false
+      t.integer :position
       
       # friendly id
       t.string :slug
