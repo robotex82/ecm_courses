@@ -25,6 +25,8 @@ module Ecm
         course = FactoryGirl.create(:ecm_courses_course, :name => 'This is a course that should have a friendly id!')
         course.to_param.should == 'this-is-a-course-that-should-have-a-friendly-id'
       end 
+      
+      # methods
     end
   end  
 end  

@@ -32,4 +32,9 @@ class Ecm::Courses::Course < ActiveRecord::Base
   validates :ecm_courses_course_category, :presence => true
   validates :locale, :inclusion => { :in => I18n.available_locales.map(&:to_s) }, :unless => Proc.new { |cc| cc.locale.blank? }
   validates :name, :presence => true
+  
+  # public methods
+  def to_s
+    "#{ecm_courses_course_category.name} - #{name}"
+  end  
 end

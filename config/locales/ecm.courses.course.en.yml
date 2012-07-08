@@ -1,0 +1,19 @@
+--- 
+en: 
+  activerecord: 
+    attributes: 
+      ecm/courses/course: 
+        created_at: created at
+        description: description
+        ecm_courses_course_category: course category
+        ecm_courses_course_dates_count: course dates
+        locale: language
+        name: name
+        position: position
+        slug: friendly id
+        updated_at: updated at
+        ecm_courses_course_category_id: course category
+    models:
+      ecm/courses/course: 
+        one: "Course"
+        other: "Courses"         

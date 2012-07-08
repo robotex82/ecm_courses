@@ -1,0 +1,19 @@
+--- 
+en: 
+  activerecord: 
+    attributes: 
+      ecm/courses/course_date: 
+        created_at: created at
+        description: description
+        duration_in_minutes: duration    
+        ecm_courses_course: course    
+        ecm_courses_course_category: course category
+        ecm_courses_course_id: course 
+        end_at: end at
+        name: name        
+        start_at: begin at
+        updated_at: updated at
+    models:
+      ecm/courses/course_date: 
+        one: "course date"
+        other: "course dates"  

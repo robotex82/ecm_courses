@@ -1,0 +1,5 @@
+en:
+  ecm:
+    courses:
+      active_admin:
+        menu: "courses"
