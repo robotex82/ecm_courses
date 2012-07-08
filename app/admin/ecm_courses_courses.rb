@@ -20,6 +20,7 @@ if defined?(ActiveAdmin)
       column :locale      
       column :ecm_courses_course_category
       column :name
+      column :ecm_courses_course_dates_count      
       column :description
       default_actions
     end

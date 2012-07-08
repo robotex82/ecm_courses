@@ -1,8 +1,19 @@
 if defined?(ActiveAdmin)
   ActiveAdmin.register Ecm::Courses::CourseDate do
+    form do |f|
+      f.inputs do
+        f.input :ecm_courses_course, :as => :select, :collection => Ecm::Courses::Course.all.collect { |ecc| [ecc, ecc.id] }
+        f.input :start_at
+        f.input :end_at
+        f.input :description
+      end
+      
+      f.actions
+    end
+  
     index do
       selectable_column
-      column :ecm_courses_course_category      
+      column :ecm_courses_course_category
       column :ecm_courses_course
       column :start_at
       column :end_at
