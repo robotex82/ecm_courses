@@ -13,7 +13,7 @@ if defined?(ActiveAdmin)
     
     menu :parent => I18n.t('ecm.courses.active_admin.menu')
     
-    show do
+    show :title => :to_s do
       attributes_table do
         row :ecm_courses_course_category
         row :ecm_courses_course

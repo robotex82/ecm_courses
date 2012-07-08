@@ -3,18 +3,19 @@ de:
   activerecord: 
     attributes: 
       ecm/courses/course_category: 
+        children: "Unter Kategorien"
         created_at: Erstellt am
-        depth: 
+        depth: Tiefe
         description: Beschreibung
         ecm_courses_courses: Kurse
         ecm_courses_courses_count: Kurse 
-        lft: 
+        lft: Links
         locale: Sprache
         name: Name
         parent: Über Kategorie
         parent_id: Über Kategorie 
         position: Position
-        rgt: 
+        rgt: Rechts
         slug: Freundliche ID
         updated_at: Aktualsiert am
     models:

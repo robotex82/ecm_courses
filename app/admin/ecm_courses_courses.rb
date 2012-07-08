@@ -13,14 +13,14 @@ if defined?(ActiveAdmin)
     
     index do
       selectable_column
+      column :locale      
       column :ecm_courses_course_category
       column :name
       column :description
-      column :locale
       default_actions
     end
     
-    show do
+    show :title => :to_s do
       attributes_table do
         row :ecm_courses_course_category
         row :locale

@@ -12,6 +12,7 @@ class Ecm::Courses::Course < ActiveRecord::Base
              
   has_many :ecm_courses_course_dates, 
            :class_name => Ecm::Courses::CourseDate, 
+           :dependent => :destroy,
            :foreign_key => :ecm_courses_course_id,
            :order => 'start_at'
   
