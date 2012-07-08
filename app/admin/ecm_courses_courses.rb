@@ -1,9 +1,13 @@
 if defined?(ActiveAdmin)
+  include ActiveAdmin::ActsAsList::Helper
+  
   ActiveAdmin.register Ecm::Courses::Course do
+    sortable_member_actions
+  
     form do |f|
       f.inputs do
         f.input :ecm_courses_course_category
-        f.input :locale
+        f.input :locale, :as => :select, :collection => I18n.available_locales.map(&:to_s)
         f.input :name
         f.input :description
       end

@@ -1,4 +1,5 @@
 if defined?(ActiveAdmin)
+  include ActiveAdmin::ActsAsList::Helper
   include ActiveAdmin::AwesomeNestedSet::Helper
   
   ActiveAdmin.register Ecm::Courses::CourseCategory do
@@ -62,6 +63,7 @@ if defined?(ActiveAdmin)
       
       panel Ecm::Courses::CourseCategory.human_attribute_name(:ecm_courses_courses) do
         table_for ecm_courses_course_category.ecm_courses_courses, :i18n => Ecm::Courses::Course do
+          sortable_columns
           column(:name) { |ecm_courses_course| link_to ecm_courses_course, [:admin, ecm_courses_course] }
           column :description
           column :locale

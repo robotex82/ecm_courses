@@ -16,5 +16,9 @@ de:
         ecm_courses_course_category_id: Kurs Kategorie
     models:
       ecm/courses/course: 
-        one: "Kurs"
-        other: "Kurse"  
+        one: Kurs
+        other: Kurse  
+  formtastic:
+    hints:
+      ecm/courses/course:
+        name: z.B. Kochen für Anfänger

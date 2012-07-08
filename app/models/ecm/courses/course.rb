@@ -31,7 +31,7 @@ class Ecm::Courses::Course < ActiveRecord::Base
     
   # validations 
   validates :ecm_courses_course_category, :presence => true
-  validates :locale, :inclusion => { :in => I18n.available_locales.map(&:to_s) }, :unless => Proc.new { |cc| cc.locale.blank? }
+  validates :locale, :inclusion => { :in => I18n.available_locales.map(&:to_s) }, :unless => Proc.new { |c| c.locale.blank? }
   validates :name, :presence => true
   
   # public methods
