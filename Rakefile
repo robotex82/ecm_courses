@@ -25,3 +25,9 @@ end
 
 Bundler::GemHelper.install_tasks
 
+# travis ci
+task :default => [:spec]
+desc 'run Rspec specs'
+task :spec do
+  sh 'cd ./spec/dummy && rspec && cd ../../'
+end
