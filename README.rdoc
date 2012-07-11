@@ -1,7 +1,5 @@
 = EcmCourses
 
-= Build status
-
 {<img src="https://secure.travis-ci.org/robotex82/ecm_courses.png?branch=master" alt="Build Status" />}[http://travis-ci.org/robotex82/ecm_courses]
 
 = Purpose
