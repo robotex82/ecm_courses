@@ -29,5 +29,5 @@ Bundler::GemHelper.install_tasks
 task :default => [:spec]
 desc 'run Rspec specs'
 task :spec do
-  sh 'cd ./spec/dummy && RAILS_ENV=test bundle exec rake --trace db:migrate test  && rspec'
+  sh 'cd ./spec/dummy && rspec'
 end
