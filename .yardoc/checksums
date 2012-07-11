@@ -1,0 +1,10 @@
+lib/ecm_courses.rb 04fc0352e2a04376a406076b41e6ccceb1947d8d
+lib/absence_validator.rb 5908362ea1b0995a548736f1e70c148a8eb05270
+lib/ecm/courses/engine.rb f52eae74c831970bd68bc9f00667e7efb509caf9
+lib/ecm/courses/version.rb c09d9873480298d9ea16608c74e5a1bbc3e353d3
+app/admin/ecm_courses_courses.rb d5766081fb3ba5ab8f4a93edbf8cb1092e86a413
+app/models/ecm/courses/course.rb 9618aa21c238848f69926e379a91d6d33b31d22e
+app/models/ecm/courses/course_date.rb fdeab21d313d787c37a4182d2b8d59e120326506
+app/admin/ecm_courses_course_dates.rb 075fa376bfdbefb75a0f8bbdf2460947c4780d16
+app/models/ecm/courses/course_category.rb fe7b034bc6996931c45edf99c6df9bd3628ba17e
+app/admin/ecm_courses_course_categories.rb 53c423416de83f49a6ee2a71f6e0af7e94a53d36
