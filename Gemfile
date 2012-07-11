@@ -19,3 +19,8 @@ gem "jquery-rails"
 # Edge active admin
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
 gem 'coffee-rails'
+
+unless ENV['TRAVIS_RUBY_VERSION'].nil?
+gem 'pg'
+gem 'mysql2'
+end
