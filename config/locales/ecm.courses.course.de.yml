@@ -21,4 +21,4 @@ de:
   formtastic:
     hints:
       ecm/courses/course:
-        name: z.B. Kochen für Anfänger
+        name: "z.B. Kochen für Anfänger"

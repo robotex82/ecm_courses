@@ -6,6 +6,7 @@ en:
         created_at: created at
         description: description
         ecm_courses_course_category: course category
+        ecm_courses_course_dates: course dates
         ecm_courses_course_dates_count: course dates
         locale: language
         name: name
@@ -16,4 +17,8 @@ en:
     models:
       ecm/courses/course: 
         one: "Course"
-        other: "Courses"         
+        other: "Courses"
+  formtastic:
+    hints:
+      ecm/courses/course:
+        name: "i.e. Cooking for beginners"               
