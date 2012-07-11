@@ -10,3 +10,7 @@ rvm:
   - ruby-head
   - jruby-head
   - ree
+env:
+  - DB=sqlite
+  - DB=mysql
+  - DB=postgresql
