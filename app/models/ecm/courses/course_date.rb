@@ -35,12 +35,18 @@ class Ecm::Courses::CourseDate < ActiveRecord::Base
     "#{I18n.l(start_at)} - #{I18n.l(end_at)}"
   end
   
+  # class methods
+  def self.for_month(date)
+    date ||= Time.zone.now.to_date
+    where(:start_at => (date.beginning_of_month..date.end_of_month))
+  end
+  
   # protected methods
   protected
     def set_defaults
       if self.new_record?
-        self.start_at = 6.hours.from_now.change( :min => 0 )
-        self.end_at = self.start_at + 1.hours
+        self.start_at ||= 6.hours.from_now.change( :min => 0 )
+        self.end_at ||= self.start_at + 1.hours
       end
     end
 end
