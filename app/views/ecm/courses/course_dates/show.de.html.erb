@@ -1,0 +1,11 @@
+<div class="course-date" id="course-date_<%= @course_date.to_param %>">
+  <h1><%= link_to @course_date.ecm_courses_course_category.to_s, @course_date.ecm_courses_course_category %></h1>
+  
+  <h2><%= link_to @course_date.ecm_courses_course.to_s, @course_date.ecm_courses_course %></h2>
+  
+  <h3><%= @course_date %></h3>
+  
+  <div class="course_date-description">
+    <%= @course_date.description %>
+  </div>    
+</div>

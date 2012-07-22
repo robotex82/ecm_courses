@@ -20,7 +20,10 @@ gem "jquery-rails"
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
 gem 'coffee-rails'
 
+# ECM Calendar Helper
+# gem 'ecm_calendar_helper', :path => '/home/robo/rails/modules/ecm_calendar_helper-master'
+
 unless ENV['TRAVIS_RUBY_VERSION'].nil?
-gem 'pg'
-gem 'mysql2'
+  gem 'pg'
+  gem 'mysql2'
 end

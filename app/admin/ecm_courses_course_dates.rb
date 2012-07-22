@@ -1,8 +1,12 @@
 if defined?(ActiveAdmin)
   ActiveAdmin.register Ecm::Courses::CourseDate do
+    # menu config
+    menu :parent => I18n.t('ecm.courses.active_admin.menu')
+    
     form do |f|
       f.inputs do
-        f.input :ecm_courses_course, :as => :select, :collection => Ecm::Courses::Course.all.collect { |ecc| [ecc, ecc.id] }
+        f.input :ecm_courses_course, :as => :select, 
+                                     :collection => Ecm::Courses::Course.all.collect { |ecc| [ecc, ecc.id] }
         f.input :start_at
         f.input :end_at
         f.input :description
@@ -21,8 +25,6 @@ if defined?(ActiveAdmin)
       column :description
       default_actions
     end
-    
-    menu :parent => I18n.t('ecm.courses.active_admin.menu')
     
     show :title => :to_s do
       attributes_table do

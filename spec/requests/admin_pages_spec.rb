@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.configure do |c|
-  c.include ActiveAdmin::SigninHelper
+  c.include ActiveAdmin::SignInHelper
 end
 
 describe "AdminPages" do

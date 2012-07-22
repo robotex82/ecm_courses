@@ -35,6 +35,12 @@ class Ecm::Courses::Course < ActiveRecord::Base
   validates :name, :presence => true
   
   # public methods
+
+  def heading_name
+    locale_prefix = (locale.blank?) ? "" : "[#{locale}] "
+    "#{locale_prefix}#{name}"
+  end
+  
   def to_s
     "#{ecm_courses_course_category.name} - #{name}"
   end  

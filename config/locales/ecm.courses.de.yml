@@ -3,3 +3,12 @@ de:
     courses:
       active_admin:
         menu: "Kurse"
+      course:
+        messages:
+          not_found: "Download \"%{name}\" nicht gefunden."
+      course_category:
+        actions:
+          back_to_index: "Zurück zur Übersicht"
+        messages:
+          not_found: "Kurs Kategorie \"%{name}\" nicht gefunden."
+          no_courses_available: "Keine Kurse in dieser Kategorie vorhanden."          

@@ -1,0 +1,5 @@
+en:
+  resources:
+    ecm_courses_courses: "courses"   
+    ecm_courses_course_categories: "course-categories" 
+    ecm_courses_course_dates: "course-dates" 

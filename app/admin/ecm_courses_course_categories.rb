@@ -3,14 +3,21 @@ if defined?(ActiveAdmin)
   include ActiveAdmin::AwesomeNestedSet::Helper
   
   ActiveAdmin.register Ecm::Courses::CourseCategory do
+    # menu entry settings
+    menu :parent => I18n.t('ecm.courses.active_admin.menu')
+
+    # sorting
     config.sort_order = 'lft_asc'
     
+    # awesome nested set
     sortable_tree_member_actions
     
     form do |f|
       f.inputs do
-        f.input :parent
-        f.input :locale, :as => :select, :collection => I18n.available_locales.map(&:to_s)
+        f.input :parent, :as => :select, 
+                         :collection => nested_set_options(Ecm::Courses::CourseCategory, f.object) { |cc| "#{'-' * cc.level} #{cc.name}" }
+        f.input :locale, :as => :select,
+                         :collection => I18n.available_locales.map(&:to_s)
         f.input :name
         f.input :description
       end
@@ -30,7 +37,7 @@ if defined?(ActiveAdmin)
       default_actions
     end
     
-    menu :parent => I18n.t('ecm.courses.active_admin.menu')
+    
     
     show :title => :to_s do
       attributes_table do
@@ -52,7 +59,7 @@ if defined?(ActiveAdmin)
         table_for ecm_courses_course_category.children, :i18n => Ecm::Courses::CourseCategory do
 #          column(:name) { |ecm_courses_course| link_to ecm_courses_course, [:admin, ecm_courses_course] }
           sortable_tree_columns
-          column(:index_name) { |ecm_courses_cours_category| link_to ecm_courses_cours_category, [:admin, ecm_courses_cours_category] }  
+          column(:index_name) { |ecm_courses_course_category| link_to ecm_courses_course_category, [:admin, ecm_courses_course_category] }  
     #      column :locale
     #      column :parent
     #      column :name

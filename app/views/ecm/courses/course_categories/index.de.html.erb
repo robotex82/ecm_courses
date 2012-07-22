@@ -1,0 +1,7 @@
+<h1><%= Ecm::Courses::CourseCategory.model_name.human(:count => :other) %></h1>
+
+<div class="course_categories-tree">
+  <%= nested_li(@course_categories, {}) do |course_category| %>
+    <%= link_to course_category.tree_name, course_category %>
+  <% end %>
+</div>

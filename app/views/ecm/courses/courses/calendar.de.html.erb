@@ -1,0 +1,6 @@
+<h1>Kurskalender für <%= I18n.l(@date, :format => :month_with_year) %></h1>
+
+<%= link_to "Zurück zu #{@course.ecm_courses_course_category}", @course.ecm_courses_course_category %>
+
+<%= month_calendar_pagination(@date) %>
+<%= month_calendar(@date, @course_dates, { :display_method => :ecm_courses_course.to_s}) %>

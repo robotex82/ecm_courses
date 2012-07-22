@@ -44,4 +44,14 @@ class Ecm::Courses::CourseCategory < ActiveRecord::Base
   def to_s
     name
   end  
+
+  def tree_name
+    root_prefix = (self.root?) ? "[#{self.locale}] " : ""
+      
+    if ecm_courses_courses_count < 1
+      "#{root_prefix}#{to_s}" 
+    else 
+      "#{root_prefix}#{to_s} (#{ecm_courses_courses_count})"     
+    end
+  end 
 end

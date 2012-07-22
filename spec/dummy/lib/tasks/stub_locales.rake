@@ -1,13 +1,5 @@
 require 'pp'
-
-class Hash
-  def dig(*path)
-    path.inject(self) do |location, key|
-      location.respond_to?(:keys) ? location[key] : nil
-    end
-  end
-end
-
+require 'locale_generator'
 
 namespace :locales do
   desc "Stubs out locale files for all active record descendants."

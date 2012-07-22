@@ -3,3 +3,12 @@ en:
     courses:
       active_admin:
         menu: "courses"
+      course:
+        messages:
+          not_found: "Course \"%{name}\" not found."
+      course_category:
+        actions:
+          back_to_index: "Back to the index"
+        messages:
+          not_found: "Course category \"%{name}\" not found."
+          no_courses_available: "There are now courses in this category."          

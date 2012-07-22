@@ -29,5 +29,5 @@ Bundler::GemHelper.install_tasks
 task :default => [:spec]
 desc 'run Rspec specs'
 task :spec do
-  sh 'cd ./spec/dummy && rspec'
+  sh 'cd ./spec/dummy && rspec && cd ../../'
 end

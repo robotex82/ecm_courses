@@ -1,0 +1,15 @@
+<div class="course" id="course-<%= course.to_param %>">
+  <h2><%= course.heading_name %></h2>
+  
+  <% unless course.description.blank? %>
+  <div class="course-description">
+    <p><%= course.description %></p>
+  </div>
+  <% end %>
+
+  <div class="course-dates">
+    <%= render course.ecm_courses_course_dates %>
+  </div>
+</div>
+
+<hr />

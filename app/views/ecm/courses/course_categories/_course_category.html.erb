@@ -1,0 +1,29 @@
+<div class="course_category" id="course_category-<%= course_category.id %>">
+  <% if action_name == 'show' %>
+    <h1 class="courses_category-name"><%= course_category.name %></h1>
+  <% else %>
+    <h2 class="courses_category-name"><%= course_category.name %></h2>
+  <% end %>  
+  
+  <div class="course_categories-tree">
+      <%= nested_li(course_category.descendants, {}) do |course_category| %>
+        <%= link_to course_category.tree_name, course_category %>
+      <% end %>
+  </div>
+
+  <% unless course_category.description.blank? %>
+    <div class="course_categories-description">
+      <p><%= course_category.description %></p>
+    </div>
+  <% end %>
+  
+  <div class="course_category-courses">
+    <h2><%= Ecm::Courses::CourseCategory.human_attribute_name(:ecm_courses_courses) %></h2>  
+    <% if course_category.ecm_courses_courses_count == 0 %>
+      <%= t('ecm.courses.course_category.messages.no_courses_available') %>
+      <hr />
+    <% else %>
+      <%= render course_category.ecm_courses_courses %>
+    <% end %>
+  </div>  
+</div>
