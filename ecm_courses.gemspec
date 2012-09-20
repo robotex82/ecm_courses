@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "awesome_nested_set-tools"
   s.add_dependency "ecm_calendar_helper", "~> 0.0.1.pre"
   s.add_dependency "friendly_id", "~> 4.0.7"
+  s.add_dependency "rails_tools-absence_validator", "~>0.0.3"
 
   # Development Database
   s.add_development_dependency "sqlite3"
@@ -40,7 +41,7 @@ Gem::Specification.new do |s|
   
   # # Tests
   s.add_development_dependency "rspec-rails", "~> 2.0"
-  s.add_development_dependency "factory_girl_rails", "~> 3.0"
+  s.add_development_dependency "factory_girl_rails", "~> 1.0"
   s.add_development_dependency "shoulda-matchers"
   s.add_development_dependency "capybara"
   

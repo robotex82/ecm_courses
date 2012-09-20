@@ -1,6 +1,6 @@
 require 'rubygems'
 
-require 'absence_validator'
+require 'rails_tools-absence_validator'
 require 'acts_as_list'
 require 'awesome_nested_set'
 require 'awesome_nested_set-tools'
@@ -14,6 +14,11 @@ require 'sass-rails'
 require 'meta_search'
 
 require 'ecm/courses/engine'
+require 'ecm/courses/configuration'
 require 'ecm/courses/routing'
 
-
+module Ecm
+  module Courses
+    extend Configuration
+  end
+end

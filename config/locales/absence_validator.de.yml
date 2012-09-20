@@ -1,5 +1,0 @@
-de:
-  activerecord:
-    errors:
-      messages:
-        absence: "ist nicht leer"
