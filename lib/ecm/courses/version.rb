@@ -1,5 +1,5 @@
 module Ecm
   module Courses
-    VERSION = "0.0.3.pre"
+    VERSION = "0.0.4.pre"
   end  
 end
