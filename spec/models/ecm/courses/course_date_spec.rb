@@ -1,17 +1,19 @@
+require 'spec_helper'
+
 module Ecm
   module Courses
     describe CourseDate do
       subject { FactoryGirl.build(:ecm_courses_course_date) }
-      
+
       # associations
       it { should belong_to(:ecm_courses_course) }
       it { should have_one(:ecm_courses_course_category) }
-      
+
       # validations
       it { should validate_presence_of(:ecm_courses_course) }
-      it { should validate_presence_of(:end_at) }      
+      it { should validate_presence_of(:end_at) }
       it { should validate_presence_of(:start_at) }
-      
+
       # methods
       it "should calculate the duration" do
         now = Time.zone.now
@@ -20,4 +22,5 @@ module Ecm
       end
     end
   end
-end      
+end
+

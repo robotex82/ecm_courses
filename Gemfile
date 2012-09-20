@@ -16,10 +16,6 @@ gem "jquery-rails"
 # To use debugger
 # gem 'debugger'
 
-# Edge active admin
-gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
-gem 'coffee-rails'
-
 # ECM Calendar Helper
 # gem 'ecm_calendar_helper', :path => '/home/robo/rails/modules/ecm_calendar_helper-master'
 

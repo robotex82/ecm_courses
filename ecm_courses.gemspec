@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.2.6"
   s.add_dependency "acts_as_list", "~> 0.1.6"
+  s.add_dependency "activeadmin", "~>0.5.0"
   s.add_dependency "active_admin-acts_as_list", "~> 0.0.6"
   s.add_dependency "active_admin-awesome_nested_set"
   s.add_dependency "awesome_nested_set", "~> 2.1.3"

@@ -1,4 +1,4 @@
-class Ecm::Courses::CoursesController < ::FrontendController
+class Ecm::Courses::CoursesController < ApplicationController
   def calendar
     @year = params[:year] ||= Time.zone.now.year
     @month = params[:month] ||= Time.zone.now.month

@@ -1,4 +1,4 @@
-class Ecm::Courses::CourseDatesController < ::FrontendController
+class Ecm::Courses::CourseDatesController < ApplicationController
   def index
     @course_dates = Ecm::Courses::CourseDate.includes(:ecm_courses_course => [ :ecm_courses_course_category ]).all
   end
