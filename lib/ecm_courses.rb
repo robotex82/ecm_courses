@@ -1,17 +1,10 @@
-require 'rubygems'
-
-require 'rails_tools-absence_validator'
+require 'active_admin-acts_as_list'
 require 'acts_as_list'
 require 'awesome_nested_set'
 require 'awesome_nested_set-tools'
+require 'ecm_calendar_helper'
 require 'friendly_id'
-
-require 'active_admin-acts_as_list'
-
-# Ecm::Admin should do this!
-require 'activeadmin' 
-require 'sass-rails'
-require 'meta_search'
+require 'rails_tools-absence_validator'
 
 require 'ecm/courses/engine'
 require 'ecm/courses/configuration'
@@ -22,3 +15,4 @@ module Ecm
     extend Configuration
   end
 end
+

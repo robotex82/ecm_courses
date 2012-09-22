@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.2.6"
   s.add_dependency "acts_as_list", "~> 0.1.6"
-  s.add_dependency "activeadmin", "~>0.5.0"
   s.add_dependency "active_admin-acts_as_list", "~> 0.0.6"
   s.add_dependency "active_admin-awesome_nested_set"
   s.add_dependency "awesome_nested_set", "~> 2.1.3"
@@ -34,6 +33,11 @@ Gem::Specification.new do |s|
   
   # Documentation
   s.add_development_dependency "yard"
+
+  # Active admin
+  s.add_development_dependency 'activeadmin'
+  s.add_development_dependency 'sass-rails'
+  s.add_development_dependency 'coffee-rails'
   
   # Dummy App
   # s.add_development_dependency "activeadmin" # Using edge active admin (see Gemfile)

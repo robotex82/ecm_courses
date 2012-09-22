@@ -6,7 +6,7 @@
   <% end %>  
   
   <div class="course_categories-tree">
-      <%= nested_li(course_category.descendants, {}) do |course_category| %>
+      <%= nested_li(course_category.descendants, {}) do |course_category, level| %>
         <%= link_to course_category.tree_name, course_category %>
       <% end %>
   </div>

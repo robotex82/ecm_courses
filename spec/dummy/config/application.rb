@@ -10,6 +10,7 @@ require "sprockets/railtie"
 
 Bundler.require
 require "ecm_courses"
+require "active_admin"
 
 module Dummy
   class Application < Rails::Application

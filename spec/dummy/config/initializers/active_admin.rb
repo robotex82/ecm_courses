@@ -1,3 +1,4 @@
+I18n.available_locales = [:de, :en]
 I18n.default_locale = :de
 I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
 I18n.reload!
@@ -14,7 +15,7 @@ ActiveAdmin.setup do |config|
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
-  # config.site_title_link = "/"
+  config.site_title_link = "/"
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
@@ -90,6 +91,13 @@ ActiveAdmin.setup do |config|
   # Default:
   # config.logout_link_method = :get
 
+  # == Root
+  #
+  # Set the action to call for the root path. You can set different
+  # roots for each namespace.
+  #
+  # Default:
+  # config.root_to = 'dashboard#index'
 
   # == Admin Comments
   #
@@ -108,6 +116,13 @@ ActiveAdmin.setup do |config|
   #   end
 
 
+  # == Batch Actions
+  #
+  # Enable and disable Batch Actions
+  #
+  config.batch_actions = true
+  
+
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your
@@ -124,10 +139,16 @@ ActiveAdmin.setup do |config|
   #
   # To load a stylesheet:
   #   config.register_stylesheet 'my_stylesheet.css'
-  #
+  
   # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
   #   config.register_stylesheet 'my_print_stylesheet.css', :media => :print
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
+
+
+  # == CSV options
+  #
+  # Set the CSV builder separator (default is ",")
+  # config.csv_column_separator = ','
 end
