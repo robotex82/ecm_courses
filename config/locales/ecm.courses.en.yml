@@ -14,4 +14,5 @@ en:
           back_to_index: "Back to the index"
         messages:
           not_found: "Course category \"%{name}\" not found."
-          no_courses_available: "There are now courses in this category."          
+          no_courses_available: "There are now courses in this category."
+

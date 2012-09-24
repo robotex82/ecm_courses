@@ -1,24 +1,25 @@
---- 
-en: 
-  activerecord: 
-    attributes: 
-      ecm/courses/course_category: 
-        children: "sub categories"      
+---
+en:
+  activerecord:
+    attributes:
+      ecm/courses/course_category:
+        children: "sub categories"
         created_at: created at
         depth: depth
         description: description
-        ecm_courses_courses: courses        
         ecm_courses_courses_count: courses
+        ecm_courses_courses: courses
         lft: left
         locale: language
         name: name
+        parent_id: parent cateogory
         parent: parent category
-        parent_id: parent cateogory 
         position: position
         rgt: right
         slug: friendly id
         updated_at: updated at
     models:
-      ecm/courses/course_category: 
+      ecm/courses/course_category:
         one: "course category"
-        other: "course_categories"         
+        other: "course_categories"
+

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ecm_courses (0.0.4.pre)
+    ecm_courses (0.0.5.pre)
       active_admin-acts_as_list (~> 0.0.6)
       active_admin-awesome_nested_set
       acts_as_list (~> 0.1.6)
