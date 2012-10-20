@@ -44,13 +44,20 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sass-rails"
   s.add_development_dependency "meta_search", ">= 1.1.0.pre"
   
-  # # Tests
-  s.add_development_dependency "rspec-rails", "~> 2.0"
-  s.add_development_dependency "factory_girl_rails", "~> 1.0"
-  s.add_development_dependency "shoulda-matchers"
-  s.add_development_dependency "capybara"
-  
-  # s.add_development_dependency "capybara"
-  # s.add_development_dependency "guard-rspec"
-  # s.add_development_dependency "guard-spork"
+  # Tests
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'shoulda-matchers'
+  s.add_development_dependency 'factory_girl_rails', '~> 1.0'
+
+  # Fake Data Generation
+  s.add_development_dependency 'ffaker'
+  s.add_development_dependency 'forgery'
+
+  # Test automation
+  s.add_development_dependency 'rb-inotify', '~> 0.8.8'
+  # See gemfile for a patched version, for engine support.
+  # s.add_development_dependency 'guard-rails'
+  s.add_development_dependency 'guard-rspec'
+  s.add_development_dependency 'guard-bundler'
 end

@@ -38,7 +38,7 @@ class Ecm::Courses::CourseDate < ActiveRecord::Base
   # class methods
   def self.for_month(date)
     date ||= Time.zone.now.to_date
-    where(:start_at => (date.beginning_of_month..date.end_of_month))
+    where(:start_at => (date.beginning_of_month..(date.end_of_month + 1.day)))
   end
   
   # protected methods

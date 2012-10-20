@@ -19,6 +19,9 @@ gem "jquery-rails"
 # ECM Calendar Helper
 # gem 'ecm_calendar_helper', :path => '/home/robo/rails/modules/ecm_calendar_helper-master'
 
+# Patched guard rails
+gem 'guard-rails',  :git => 'git://github.com/robotex82/guard-rails.git', :branch => 'better-engine-support'
+
 unless ENV['TRAVIS_RUBY_VERSION'].nil?
   gem 'pg'
   gem 'mysql2'
