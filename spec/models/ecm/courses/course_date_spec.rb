@@ -1,52 +1,45 @@
 require 'spec_helper'
 
-module Ecm
-  module Courses
-    describe CourseDate do
-      subject { FactoryGirl.build(:ecm_courses_course_date) }
+module Ecm::Courses
+  describe CourseDate do
+    context 'associations' do
+      it { should belong_to :ecm_courses_course }
+      it { should have_one(:ecm_courses_course_category).through(:ecm_courses_course  ) }
+    end # context 'associations'
 
-      # associations
-      it { should belong_to(:ecm_courses_course) }
-      it { should have_one(:ecm_courses_course_category) }
+    context 'validations' do
+      it { should validate_presence_of :ecm_courses_course }
+      it { should validate_presence_of :start_at }
+      it { should validate_presence_of :end_at }
+    end # context 'validations'
 
-      # validations
-      it { should validate_presence_of(:ecm_courses_course) }
-      it { should validate_presence_of(:end_at) }
-      it { should validate_presence_of(:start_at) }
+    context '#duration_in_minutes' do
+      subject { CourseDate.new(:start_at => Time.zone.now, :end_at => Time.zone.now + 1.5.hours) }
 
-      # methods
-      it "should calculate the duration" do
-        now = Time.zone.now
-        course_date = FactoryGirl.build(:ecm_courses_course_date, :start_at => now + 1.hour, :end_at => now + 2.hours)
-        course_date.duration_in_minutes.should == 60
-      end
+      its(:duration_in_minutes) { should eq(90) }
+    end # context '#duration_in_minutes'
 
-      # named scopes
-      context '#for_month' do
-        it 'should return the course dates for last day of the given month' do
-          course_date = FactoryGirl.build(:ecm_courses_course_date)
-          course_date.start_at = Time.zone.now.end_of_month
-          course_date.end_at = course_date.end_at + 180.minutes
-          course_date.save!
+    context '#set_defaults' do
+      subject { CourseDate.new }
 
-          Ecm::Courses::CourseDate.for_month(Time.zone.now.to_date).all.should include(course_date)
-        end
+      its(:start_at) { should eq(6.hours.from_now.change( :min => 0 )) }
+      its(:end_at)   { should eq(7.hours.from_now.change( :min => 0 )) }
+    end # context '#set_defaults'
 
-        it 'should not return the course dates that are not in the given month' do
-          course_date = FactoryGirl.build(:ecm_courses_course_date)
-          course_date.start_at = Time.zone.now
-          course_date.end_at = course_date.end_at + 180.minutes
-          course_date.save!
-
-          last_month_course_date = FactoryGirl.build(:ecm_courses_course_date)
-          last_month_course_date.start_at = Time.zone.now - 1.month
-          last_month_course_date.end_at = course_date.end_at + 180.minutes
-          last_month_course_date.save!
-
-          Ecm::Courses::CourseDate.for_month(Time.zone.now.to_date).all.should_not include(last_month_course_date)
-        end
-      end
+    context '#to_s' do
     end
-  end
+
+    context '#for_month' do
+      before do
+        FactoryGirl.create(:ecm_courses_course_date,
+                           :start_at => Time.zone.now,
+                           :end_at => Time.zone.now + 1)
+      end # before
+
+      it 'should include course dates for the given month' do
+        CourseDate.for_month(Time.zone.now).count.should eq(1)
+      end # it
+    end # context '#for_month'
+  end # describe CourseDate
 end
 

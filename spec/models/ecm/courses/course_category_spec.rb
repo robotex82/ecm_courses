@@ -1,43 +1,39 @@
 require 'spec_helper'
 
-module Ecm
-  module Courses
-    describe CourseCategory do
-      subject { FactoryGirl.build(:ecm_courses_course_category) }
+module Ecm::Courses
+  describe CourseCategory do
+    context 'associations' do
+      it { should have_many :ecm_courses_courses }
+    end # context 'associations'
 
-      it { should have_many(:ecm_courses_courses) }
+    context 'validations' do
+      it { should validate_presence_of :name}
+      it { should validate_uniqueness_of(:name).scoped_to(:parent_id) }
+      it { should ensure_inclusion_of(:locale).in_array(I18n.available_locales.map(&:to_s)) }
+    end # context 'validations'
 
-      it "should respond to root" do
-        course_category = FactoryGirl.create(:ecm_courses_course_category)
-        course_category.should respond_to(:root)
+    context '#index_name' do
+    end # context '#index_name'
+
+    context '#to_param' do
+      subject { FactoryGirl.create(:ecm_courses_course_category, :name => 'This is an example course category!') }
+      its(:to_param) { should eq('this-is-an-example-course-category') }
+    end # context '#to_param'
+
+    context '#to_s' do
+      subject { FactoryGirl.build(:ecm_courses_course_category, :name => 'This is an example course category!').to_s }
+      it { should eq('This is an example course category!') }
+    end # context '#to_s'
+
+    context '#tree_name' do
+      subject do
+        FactoryGirl.build(:ecm_courses_course_category,
+          :locale => 'en',
+          :name => 'This is an example course category!'
+        ).tree_name
       end
+      it { should eq('[en] This is an example course category!') }
+    end # context '#tree_name'
 
-      it "should require a locale if it is a root node" do
-        course_category = FactoryGirl.create(:ecm_courses_course_category)
-        course_category.should be_root
-
-        course_category.locale = nil
-        course_category.should_not be_valid
-      end
-
-      it "should not accept a locale if it is not a root node" do
-        course_category = FactoryGirl.create(:ecm_courses_course_category_with_parent)
-        course_category.should_not be_root
-
-        course_category.locale = I18n.locale
-        course_category.should_not be_valid
-      end
-
-      it "should only accept available locales" do
-        course_category = FactoryGirl.build(:ecm_courses_course_category, :locale => 'invalid')
-        course_category.should_not be_valid
-      end
-
-      it "should have a friendly id" do
-        course_category = FactoryGirl.create(:ecm_courses_course_category, :name => 'Look, a slugged category!')
-        course_category.to_param.should == 'look-a-slugged-category'
-      end
-    end
-  end
+  end # describe Course
 end
-

@@ -1,35 +1,40 @@
 require 'spec_helper'
 
-module Ecm
-  module Courses
-    describe Course do
+module Ecm::Courses
+  describe Course do
+    context 'associations' do
+      it { should belong_to :ecm_courses_course_category }
+      it { should have_many :ecm_courses_course_dates }
+    end # context 'associations'
+
+    context 'validations' do
+      it { should validate_presence_of :ecm_courses_course_category }
+      it { should ensure_inclusion_of(:locale).in_array(I18n.available_locales.map(&:to_s)) }
+    end # context 'validations'
+
+    context '#heading_name' do
+      subject do
+        FactoryGirl.create(:ecm_courses_course,
+          :locale => 'en',
+          :name => 'This is an example course!'
+        )
+      end # subject
+
+      its(:heading_name) { should eq('[en] This is an example course!') }
+    end # context '#heading_name'
+
+    context '#to_s' do
       subject { FactoryGirl.build(:ecm_courses_course) }
 
-      # associations
-      it { should belong_to(:ecm_courses_course_category) }
-      it { should have_many(:ecm_courses_course_dates) }
-
-      # validations
-      it { should validate_presence_of(:name) }
-      it { should validate_presence_of(:ecm_courses_course_category) }
-      # it { should validate_uniqueness_of(:name).scoped_to(:ecm_courses_course_category_id) }
-
-      it "should only accept available locales" do
-        course = FactoryGirl.build(:ecm_courses_course, :locale => 'invalid')
-        course.should_not be_valid
+      it 'should build the correct string' do
+        subject.to_s.should eq("#{subject.ecm_courses_course_category.name} - #{subject.name}")
       end
+    end # context '#heading_name'
 
-      # acts as list
-      it { should respond_to(:move_higher) }
-
-      # friendly id
-      it "should have a friendly id" do
-        course = FactoryGirl.create(:ecm_courses_course, :name => 'This is a course that should have a friendly id!')
-        course.to_param.should == 'this-is-a-course-that-should-have-a-friendly-id'
-      end
-
-      # methods
-    end
-  end
+    context '#to_param' do
+      subject { FactoryGirl.create(:ecm_courses_course, :name => 'This is an example course!') }
+      its(:to_param) { should eq('this-is-an-example-course') }
+    end # context '#to_param'
+  end # describe
 end
 

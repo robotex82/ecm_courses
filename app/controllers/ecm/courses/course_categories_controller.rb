@@ -1,6 +1,6 @@
 class Ecm::Courses::CourseCategoriesController < ApplicationController
   def index
-    @course_categories = ::Ecm::Courses::CourseCategory.all
+    @course_categories = Ecm::Courses::CourseCategory.all
   end
 
   def show
