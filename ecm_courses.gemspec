@@ -39,7 +39,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'coffee-rails'
 
   # Dummy App
-  s.add_development_dependency "sass-rails"
   s.add_development_dependency "meta_search", ">= 1.1.0.pre"
 
   # Tests
